@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# Nadeesha Fernando's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the source code for Nadeesha Fernando's personal portfolio website.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- Vite
+- CSS3
+- Google Blogger API
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository
+2. Run `npm install` to install dependencies
+3. Set up the Google Blogger API (see below)
+4. Run `npm run dev` to start the development server
+5. Open `http://localhost:5173` in your browser (Vite uses port 5173 by default)
 
-- Configure the top-level `parserOptions` property like this:
+## Setting up the Google Blogger API
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project or select an existing one
+3. Enable the Blogger API for your project
+4. Create credentials (API key) for the Blogger API
+5. Copy the API key and replace `YOUR_API_KEY` in `src/utils/blogApi.ts`
+6. Find your Blogger ID (you can find this in your Blogger dashboard URL)
+7. Replace `YOUR_BLOG_ID` in `src/utils/blogApi.ts` with your actual Blogger ID
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Building for Production
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Run `npm run build` to create a production build of the website.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Deployment
+
+The website is automatically deployed to GitHub Pages when changes are pushed to the main branch.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
