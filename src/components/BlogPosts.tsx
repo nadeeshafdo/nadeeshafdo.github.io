@@ -72,9 +72,6 @@ const BlogPosts: React.FC = () => {
               className="blog-content"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
-            <a href={post.url} target="_blank" rel="noopener noreferrer" className="blog-link">
-              Read More
-            </a>
           </div>
         ))}
       </div>
