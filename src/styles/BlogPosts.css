@@ -1,58 +1,96 @@
-
-.blog-posts {
-  padding: 2rem 0;
-  background-color: var(--bg-card);
-}
-
-.blog-posts h2 {
+/* Blog Section */
+#blog {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
-  margin-bottom: 2rem;
-  color: var(--primary);
 }
 
-.posts-container {
+#blog h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 0 2rem;
+  padding: 1rem;
 }
 
-.blog-post {
-  background-color: var(--bg-dark);
-  border: 1px solid var(--border);
-  border-radius: 8px;
+.blog-card {
+  background-color: var(--bg-card);
+  border-radius: 12px;
   padding: 1.5rem;
-  transition: var(--transition);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.blog-post:hover {
+.blog-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
-.blog-post h3 {
-  color: var(--primary);
+.blog-card h3 {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: var(--text);
 }
 
-.blog-post p {
+.blog-meta {
+  font-size: 0.875rem;
   color: var(--text-muted);
   margin-bottom: 1rem;
 }
 
-.blog-post a {
-  color: var(--secondary);
+.blog-content {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.blog-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 6px;
   text-decoration: none;
-  font-weight: bold;
-  transition: var(--transition);
+  transition: background-color 0.3s ease;
 }
 
-.blog-post a:hover {
-  color: var(--primary);
+.blog-link:hover {
+  background-color: #4a90e2;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-  .posts-container {
+  .blog-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .blog-card {
+    padding: 1rem;
+  }
+
+  .blog-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .blog-content {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #blog h2 {
+    font-size: 2rem;
+  }
+
+  .blog-grid {
     grid-template-columns: 1fr;
   }
 }
